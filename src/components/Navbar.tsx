@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 backdrop-blur-md bg-background/80">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ember to-transparent opacity-60" />
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between pl-2 pr-6 md:pl-3 md:pr-6 py-4">
         <Link to="/" className="flex items-center gap-3 group" aria-label="Gritor">
           <span className="logo-mark">
             <img
