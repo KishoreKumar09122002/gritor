@@ -19,12 +19,14 @@ export function Navbar() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ember to-transparent opacity-60" />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-3 group" aria-label="Gritor">
-          <img
-            src={logo}
-            alt="Gritor"
-            className="h-7 md:h-8 w-auto transition-transform duration-300 group-hover:scale-105"
-            style={{ filter: "invert(1) brightness(1.15)" }}
-          />
+          <span className="logo-mark">
+            <img
+              src={logo}
+              alt="Gritor"
+              className="relative z-10 h-7 md:h-8 w-auto transition-transform duration-500 group-hover:scale-[1.04]"
+              style={{ filter: "invert(1) brightness(1.15)" }}
+            />
+          </span>
           <span className="hidden sm:inline text-[10px] font-display tracking-[0.4em] text-muted-foreground border-l border-border pl-3">
             Industrial Components
           </span>
