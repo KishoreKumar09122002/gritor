@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/gritor-logo.png";
+
 export function Footer() {
   return (
     <footer className="relative mt-32 border-t border-border bg-card/50">
