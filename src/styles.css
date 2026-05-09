@@ -212,6 +212,41 @@
     animation: marquee 30s linear infinite;
     width: max-content;
   }
+
+  .logo-mark {
+    position: relative;
+    display: inline-flex;
+    padding: 4px 8px;
+    overflow: hidden;
+    isolation: isolate;
+    transition: filter 0.4s ease;
+  }
+  .logo-mark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, oklch(0.7 0.21 45 / 0.45), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+  .logo-mark::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 35%;
+    background: linear-gradient(110deg, transparent 0%, oklch(1 0 0 / 0.55) 50%, transparent 100%);
+    transform: translateX(-200%) skewX(-20deg);
+    z-index: 2;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+  .group:hover .logo-mark { filter: drop-shadow(0 0 12px oklch(0.7 0.21 45 / 0.55)); }
+  .group:hover .logo-mark::before { opacity: 1; }
+  .group:hover .logo-mark::after {
+    transform: translateX(380%) skewX(-20deg);
+    transition: transform 0.9s var(--transition-aggressive);
+  }
 }
 
 @keyframes marquee {
