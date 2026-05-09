@@ -1,13 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/gritor-logo.jpg";
-
 export function Footer() {
   return (
     <footer className="relative mt-32 border-t border-border bg-card/50">
       <div className="absolute inset-x-0 top-0 h-1 industrial-stripes opacity-70" />
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src={logo} alt="Gritor" className="h-8 w-auto mb-4" style={{ filter: "invert(1) brightness(1.1)" }} />
+          <div className="font-display text-3xl tracking-[0.15em] mb-4">GRITOR</div>
           <p className="text-muted-foreground max-w-md leading-relaxed">
             Forged for the most demanding industries. Gritor manufactures heavy-duty
             anvil covers, urethane components and impact protection built to outlast
