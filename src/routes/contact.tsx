@@ -24,7 +24,7 @@ function Contact() {
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <span className="section-label">Get In Touch</span>
           <h1 className="font-display text-5xl md:text-7xl mt-6">
-            Tell us the <span className="text-ember">problem.</span>
+            Tell us the <span className="text-italic-serif">problem.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-xl">
             Send drawings, specs, or just describe the application. Our engineering
