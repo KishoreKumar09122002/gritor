@@ -126,79 +126,101 @@
 
 @layer components {
   .text-stroke {
-    -webkit-text-stroke: 1.5px var(--ember);
+    -webkit-text-stroke: 1.5px var(--foreground);
     color: transparent;
+  }
+  .text-italic-serif {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.02em;
+    color: var(--ember);
   }
   .diagonal-clip {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
   }
   .grid-bg {
     background-image:
-      linear-gradient(oklch(0.14 0.005 60 / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.14 0.005 60 / 0.05) 1px, transparent 1px);
+      linear-gradient(oklch(0.14 0.005 60 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.14 0.005 60 / 0.06) 1px, transparent 1px);
     background-size: 48px 48px;
   }
   .industrial-stripes {
     background: repeating-linear-gradient(
       135deg,
-      var(--ember) 0px,
-      var(--ember) 14px,
-      transparent 14px,
-      transparent 28px
+      var(--foreground) 0px,
+      var(--foreground) 10px,
+      var(--ember) 10px,
+      var(--ember) 20px
     );
   }
+
   .btn-forge {
-    @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-display text-sm uppercase tracking-widest overflow-hidden;
-    background: var(--gradient-forge);
-    color: var(--primary-foreground);
-    clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
-    transition: transform 0.3s var(--transition-aggressive), box-shadow 0.3s ease;
-    box-shadow: var(--shadow-ember);
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-display text-sm uppercase tracking-[0.2em] overflow-hidden font-bold;
+    background: var(--foreground);
+    color: var(--background);
+    border: 2px solid var(--foreground);
+    border-radius: 0;
+    clip-path: none;
+    box-shadow: 6px 6px 0 0 var(--ember);
+    transition: transform 0.2s var(--transition-aggressive), box-shadow 0.2s var(--transition-aggressive);
   }
   .btn-forge::after {
     content: ""; position: absolute; inset: 0;
-    background: linear-gradient(120deg, transparent 30%, oklch(1 0 0 / 0.35), transparent 70%);
+    background: linear-gradient(120deg, transparent 30%, oklch(1 0 0 / 0.18), transparent 70%);
     transform: translateX(-110%); transition: transform 0.6s ease;
   }
-  .btn-forge:hover { transform: translateY(-2px) skewX(-2deg); }
+  .btn-forge:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 0 var(--ember);
+  }
   .btn-forge:hover::after { transform: translateX(110%); }
+  .btn-forge:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 var(--ember); }
 
   .btn-outline-forge {
-    @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-display text-sm uppercase tracking-widest;
-    background: transparent;
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-display text-sm uppercase tracking-[0.2em] font-bold;
+    background: var(--background);
     color: var(--foreground);
-    border: 2px solid var(--border);
-    clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
-    transition: all 0.3s var(--transition-aggressive);
+    border: 2px solid var(--foreground);
+    border-radius: 0;
+    clip-path: none;
+    box-shadow: 6px 6px 0 0 var(--foreground);
+    transition: transform 0.2s var(--transition-aggressive), box-shadow 0.2s var(--transition-aggressive), background 0.2s ease, color 0.2s ease;
   }
   .btn-outline-forge:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 0 var(--ember);
+    background: var(--ember);
+    color: oklch(0.98 0 0);
     border-color: var(--ember);
-    color: var(--ember);
-    box-shadow: inset 0 0 0 1px var(--ember);
   }
 
   .card-industrial {
-    @apply relative bg-card border border-border overflow-hidden;
-    transition: transform 0.4s var(--transition-aggressive), border-color 0.3s ease;
+    @apply relative bg-card overflow-hidden;
+    border: 2px solid var(--foreground);
+    border-radius: 0;
+    box-shadow: 6px 6px 0 0 var(--foreground);
+    transition: transform 0.25s var(--transition-aggressive), box-shadow 0.25s var(--transition-aggressive);
   }
   .card-industrial::before {
-    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-    background: var(--gradient-forge);
-    transform: scaleY(0); transform-origin: top;
+    content: ""; position: absolute; left: 0; top: 0; right: 0; height: 4px;
+    background: var(--ember);
+    transform: scaleX(0); transform-origin: left;
     transition: transform 0.4s var(--transition-aggressive);
   }
   .card-industrial:hover {
-    transform: translateY(-6px);
-    border-color: var(--ember);
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0 0 var(--ember);
   }
-  .card-industrial:hover::before { transform: scaleY(1); }
+  .card-industrial:hover::before { transform: scaleX(1); }
 
   .nav-link {
-    @apply relative font-display text-sm uppercase tracking-widest text-foreground/80;
+    @apply relative font-display text-sm uppercase tracking-[0.2em] font-bold text-foreground/85;
     transition: color 0.2s ease;
   }
   .nav-link::after {
-    content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
+    content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 3px;
     background: var(--ember); transform: scaleX(0); transform-origin: right;
     transition: transform 0.3s var(--transition-aggressive);
   }
@@ -206,19 +228,21 @@
   .nav-link:hover::after, .nav-link[data-active="true"]::after {
     transform: scaleX(1); transform-origin: left;
   }
-  .nav-link[data-active="true"] { color: var(--ember); }
+  .nav-link[data-active="true"] { color: var(--foreground); }
 
   .corner-tag {
-    @apply absolute top-0 right-0 px-3 py-1 text-xs font-display tracking-widest uppercase;
-    background: var(--ember); color: #000;
-    clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%);
+    @apply absolute top-3 right-3 px-3 py-1 text-[10px] font-mono uppercase tracking-[0.2em];
+    background: var(--foreground); color: var(--background);
+    border: 2px solid var(--foreground);
+    box-shadow: 3px 3px 0 0 var(--ember);
+    clip-path: none;
   }
 
   .section-label {
-    @apply inline-flex items-center gap-3 text-xs font-display uppercase tracking-[0.3em] text-ember;
+    @apply inline-flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.35em] text-foreground/70;
   }
   .section-label::before {
-    content: ""; width: 32px; height: 2px; background: var(--ember);
+    content: "//"; color: var(--ember); font-weight: 700;
   }
 
   .marquee {
