@@ -24,7 +24,6 @@ export function Navbar() {
               src={logo}
               alt="Gritor"
               className="relative z-10 h-7 md:h-8 w-auto transition-transform duration-500 group-hover:scale-[1.04]"
-              style={{ filter: "invert(1) brightness(1.15)" }}
             />
           </span>
           <span className="hidden sm:inline text-[10px] font-display tracking-[0.4em] text-muted-foreground border-l border-border pl-3">

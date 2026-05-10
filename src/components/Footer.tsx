@@ -7,7 +7,7 @@ export function Footer() {
       <div className="absolute inset-x-0 top-0 h-1 industrial-stripes opacity-70" />
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src={logo} alt="Gritor" className="h-9 w-auto mb-4" style={{ filter: "invert(1) brightness(1.15)" }} />
+          <img src={logo} alt="Gritor" className="h-9 w-auto mb-4" />
           <p className="text-muted-foreground max-w-md leading-relaxed">
             Forged for the most demanding industries. Gritor manufactures heavy-duty
             anvil covers, urethane components and impact protection built to outlast
