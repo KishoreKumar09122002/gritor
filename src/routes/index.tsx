@@ -49,7 +49,7 @@ function Home() {
             <span className="section-label mb-6">Industrial Components Since 2004</span>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.9] mt-6">
               Forged <br />
-              <span className="text-stroke">to outlast</span> <br />
+              <span className="text-italic-serif text-6xl md:text-8xl lg:text-9xl">to outlast</span> <br />
               the work.
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
@@ -98,7 +98,7 @@ function Home() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
             <span className="section-label">Our Catalogue</span>
-            <h2 className="font-display text-4xl md:text-6xl mt-4">Built for <span className="text-ember">impact.</span></h2>
+            <h2 className="font-display text-4xl md:text-6xl mt-4">Built for <span className="text-italic-serif">impact.</span></h2>
           </div>
           <Link to="/products" className="btn-outline-forge self-start">View all</Link>
         </div>
@@ -136,7 +136,7 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-6">
           <span className="section-label">Why Gritor</span>
           <h2 className="font-display text-4xl md:text-6xl mt-4 max-w-3xl">
-            Engineering you can <span className="text-ember">trust</span> under load.
+            Engineering you can <span className="text-italic-serif">trust</span> under load.
           </h2>
           <div className="grid md:grid-cols-3 gap-6 mt-14">
             {[
@@ -168,7 +168,7 @@ function Home() {
               <span className="section-label">Start a Project</span>
               <h2 className="font-display text-3xl md:text-5xl mt-4 max-w-2xl">
                 Have a brutal application? <br />
-                <span className="text-ember">We've engineered for worse.</span>
+                <span className="text-italic-serif">We've engineered for worse.</span>
               </h2>
             </div>
             <Link to="/contact" className="btn-forge text-base">
